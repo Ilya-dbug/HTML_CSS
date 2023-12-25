@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "XWOPfjrIFpNJsBQ+Hn4gJ5kJe+IarWiktzktKVJ/go+jZO3svF4PdFL+MSpwvIL8FP42NfEG/l9iZzR0/+9ezg==",
+  "success": true,
+  "projectFilePath": "/Users/jinx/Desktop/www/homework_6/MyHttpServer/MyHttpServer/MyHttpServer.csproj",
+  "expectedPackageFiles": [
+    "/Users/jinx/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "/Users/jinx/.nuget/packages/mailkit/4.3.0/mailkit.4.3.0.nupkg.sha512",
+    "/Users/jinx/.nuget/packages/mimekit/4.3.0/mimekit.4.3.0.nupkg.sha512",
+    "/Users/jinx/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/jinx/.nuget/packages/system.formats.asn1/7.0.0/system.formats.asn1.7.0.0.nupkg.sha512",
+    "/Users/jinx/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/jinx/.nuget/packages/system.security.cryptography.pkcs/7.0.3/system.security.cryptography.pkcs.7.0.3.nupkg.sha512",
+    "/Users/jinx/.nuget/packages/system.text.encoding.codepages/7.0.0/system.text.encoding.codepages.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

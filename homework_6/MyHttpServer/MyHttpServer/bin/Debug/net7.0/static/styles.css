@@ -1,0 +1,296 @@
+.body{
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #15171E;
+    background-image: none;
+    background-origin: padding-box;
+    background-position-x: 50%;
+    background-position-y: 0;
+    background-size: auto;
+    color: #ffffff;
+    font-family: "Object Sans", "Arial", "Helvetica", "Segoe UI Symbol", "Segoe MDL2 Assets", sans-serif;
+    font-feature-settings: "kern" "liga";
+    font-size: 16px;
+    height: 965px;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 275px;
+    text-size-adjust: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh;
+}
+.main{
+    max-width: 416px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: static;
+    max-height: 735px;
+    height: 100%;
+    padding-bottom: 40px;
+    transform: none;
+}
+.main-logo{
+    margin: 0 auto 38px auto;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 240px;
+    height: 72px;
+    display: flex;
+}
+.text{
+    font-size: 32px;
+    color: #ffffff;
+    text-align: center;
+    display: block;
+    font-weight: 800;
+    font-size: 33px;
+    line-height: 36px;
+    margin: 40px 0px;
+}
+.auth-button{
+    margin: 0 auto 11px;
+    text-align: center;
+    margin-top: 35px;
+}
+.auth{
+    padding: 24px 0;
+    box-sizing: border-box;
+    border: none;
+    position: relative;
+    width: 100%;
+    display: block;
+}
+.main-div{
+    display: flex; 
+    flex-direction: column; 
+    margin: 0 auto 25px; 
+    max-width: 416px; 
+    min-height: 100%; 
+    position: static; 
+    transform: none;
+}
+.main-div::before{
+    content: "";
+    display: block;
+    flex-grow: 1;
+    min-height: 24px;
+    height: 70px;
+}
+.login{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px;
+}
+.container{
+    display: flex; 
+    flex-direction: column; 
+    width: 100%; 
+    max-width: 1200px; 
+    min-height: 100%; 
+    padding-bottom: 40px; 
+    padding-left: 0; 
+    padding-right: 0; 
+    padding-top: 0; 
+    position: relative; 
+    box-sizing: content-box;
+}
+.buttons{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px;
+}
+.link{
+    margin-bottom: 24px;
+    display: list-item;
+    padding-left: 0;
+}
+.link-a{
+    color: #148eff;
+    text-decoration: none;
+    text-underline-position: under;
+    font-weight: 700;
+    background: transparent;
+}
+.link-a:hover{
+    text-decoration: underline;
+    filter: brightness(1.2);
+}
+.button{
+    position: relative;
+    width: 48px;
+    height: 48px;
+    padding: 0; 
+    margin: 12px;
+    border-radius: 4px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.button:hover{
+    filter: brightness(0.8);
+}
+.main-span{
+    position: relative;
+    display: inline-block;   
+}
+.main-span:before{
+    background-color: rgba(255, 255, 255, 0.18);
+    right: 100%;
+    margin-right: 20px;
+    width: 500px;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+}
+.main-span:after{
+    background-color: rgba(255, 255, 255, 0.18);
+    left: 100%;
+    width: 500px;
+    margin-left: 20px;
+    content: "";
+    height: 1px;
+    position: absolute;
+    top: 50%;
+}
+.third-party{
+    color: rgba(255, 255, 255, 0.6);
+    margin: 40px 0 24px 0;
+    font-style: normal;
+    font-weight: 700;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    font-family: "Noto Sans", "Object Sans", sans-serif;
+    line-height: 21px;
+    text-transform: none;
+    padding: 0;
+    display: block;
+    text-align: center;
+}
+.submit-button{
+    margin-top: 5px;
+    margin-bottom: 6px;
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #0074e0;
+    color: #ffffff;
+    border: 2px solid transparent;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+    white-space: normal;
+    margin: 3px 0;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 20px;
+    min-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+.main-input{
+    max-width: 416px;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    height: 40px;
+    padding: 0 12px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.36);
+    background-color: #171920;
+    color: #ffffff;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+.main-input::placeholder{
+    font-family: "Object Sans", "Arial", "Helvetica", "Segoe UI Symbol", "Segoe MDL2 Assets", sans-serif;
+    font-weight: 300;
+    filter: brightness(1.2);
+}
+.main-input:focus{
+    box-shadow: 0 0 5px rgba(0, 112, 204, 0.5);
+    color: #ffffff;
+    border: 1px solid #0070CC;
+    outline: none;
+}
+.main-input:focus:hover{
+    border: 1px solid #ffffff;
+}
+.main-input:hover{
+    border: 1px solid #ffffff;
+}
+.links{
+    list-style: none;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    padding: 0;
+    margin: 0 0 39.6px 30px;
+    line-height: 30px;
+    list-style-type: none;
+    text-align: center;
+    margin: 10px 0;
+    margin: 48px 0 0 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-bottom: 24px;
+    align-items: center;
+    display: block;
+    bottom: 20px;
+}
+.footer-div{
+    display: block;
+    color: rgb(123, 123, 123);
+    font-family: "Blizzard", "Arial", "Helvetica", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.copyright{
+    padding: 0;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.3);
+    line-height: 24px;
+    text-transform: uppercase;
+}
+.footer-link{
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    font-weight: 400;
+    text-decoration: none;
+    text-underline-position: under;
+    font-weight: 700;
+    background: transparent;
+}
+.footer-link:hover{
+    color: #ffffff;
+}
